@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "lifepro-100k-giveaway",
+      "settings": {
+        "governing_state": "New Jersey",
+        "promo_code": "THANKYOU100",
+        "privacy_url": "/policies/privacy-policy",
+        "terms_url": "/policies/terms-of-service"
+      }
+    }
+  },
+  "order": ["main"]
+}

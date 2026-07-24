@@ -1,0 +1,204 @@
+/* ============================================================
+   LIFEPRO 100K CELEBRATION GIVEAWAY — page styles
+   Ported from the Lifepro Design System (colors_and_type.css)
+   plus the giveaway page's own layout rules.
+   ============================================================ */
+
+/* -------- WEBFONTS — licensed Lifepro brand families -------- */
+@font-face {
+  font-family: "Area Normal"; font-weight: 200; font-style: normal; font-display: swap;
+  src: url("{{ 'Area-Thin.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 200; font-style: italic; font-display: swap;
+  src: url("{{ 'Area-ThinItalic.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 300; font-style: normal; font-display: swap;
+  src: url("{{ 'Area-Thin.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("{{ 'Area-Regular.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 400; font-style: italic; font-display: swap;
+  src: url("{{ 'Area-RegularItalic.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("{{ 'Area-Semibold.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Area Normal"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("{{ 'Area-Bold.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Novecento Sans Wide"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("{{ 'Novecento-Book.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Novecento Sans Wide"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("{{ 'Novecento-Medium.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Novecento Sans Wide"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("{{ 'Novecento-DemiBold.otf' | asset_url }}") format("opentype");
+}
+@font-face {
+  font-family: "Novecento Sans Wide"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("{{ 'Novecento-DemiBold.otf' | asset_url }}") format("opentype");
+}
+
+/* ============================================================
+   FOUNDATION TOKENS
+   ============================================================ */
+.lp-giveaway {
+  --lp-bright-red:     #FE391F;
+  --lp-journey-orange: #F88130;
+  --lp-gradient:       linear-gradient(135deg, #FE391F 0%, #FE391F 75%, #F88130 100%);
+  --lp-gradient-h:     linear-gradient(90deg,  #FE391F 0%, #FE391F 75%, #F88130 100%);
+
+  --lp-rest:           #F3E7D7;
+  --lp-wellness:       #DAE1E8;
+  --lp-matte-black:    #212322;
+  --lp-rejuvenate:     #C7D6EA;
+
+  --lp-journey-40:     #FCBC9B;
+  --lp-rest-40:        #F9F4EC;
+
+  --lp-white:          #FFFFFF;
+  --lp-black:          #000000;
+
+  --lp-font-primary:   "Area Normal", "Helvetica Neue", Arial, sans-serif;
+  --lp-font-display:   "Novecento Sans Wide", "Area Normal", "Helvetica Neue", Arial, sans-serif;
+
+  --lp-track-caps:     0.15em;
+
+  --lp-fg-1:           var(--lp-matte-black);
+  --lp-fg-2:           #4A4D4C;
+  --lp-fg-3:           #7E8180;
+
+  --lp-accent:         var(--lp-bright-red);
+
+  --lp-shadow-card:    0 2px 8px rgba(33, 35, 34, 0.06);
+  --lp-shadow-product: 0 24px 48px rgba(33, 35, 34, 0.15);
+
+  --lp-ease:           cubic-bezier(0.2, 0, 0.2, 1);
+  --lp-ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --lp-dur-base:       220ms;
+
+  font-family: var(--lp-font-primary);
+  color: var(--lp-fg-1);
+  background: var(--lp-white);
+}
+
+.lp-giveaway *, .lp-giveaway *::before, .lp-giveaway *::after { box-sizing: border-box; }
+.lp-giveaway img { max-width: 100%; display: block; }
+.lp-giveaway a { color: var(--lp-bright-red); text-decoration: none; }
+.lp-giveaway a:hover { color: var(--lp-journey-orange); }
+.lp-giveaway h1, .lp-giveaway h2, .lp-giveaway h3 {
+  font-family: var(--lp-font-primary);
+  font-weight: 400;
+  color: var(--lp-fg-1);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  margin: 0;
+  text-wrap: pretty;
+}
+.lp-giveaway p { margin: 0; color: var(--lp-fg-2); text-wrap: pretty; }
+.lp-giveaway summary::-webkit-details-marker { display: none; }
+.lp-giveaway summary { list-style: none; }
+.lp-giveaway details[open] > summary .lp-acc-plus { transform: rotate(45deg); }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@keyframes lp-float-a { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-22px) rotate(8deg); } }
+@keyframes lp-float-b { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(-10deg); } }
+@keyframes lp-drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(14px); } }
+@keyframes lp-pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes lp-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.lp-marquee-track { display: inline-flex; align-items: center; white-space: nowrap; animation: lp-marquee 26s linear infinite; }
+.lp-marquee-wrap:hover .lp-marquee-track { animation-play-state: paused; }
+
+.lp-navlink { color: var(--lp-fg-2); font-size: 13px; font-weight: 600; transition: color 180ms var(--lp-ease); }
+.lp-navlink:hover { color: var(--lp-bright-red); }
+.lp-desk-nav { display: none; }
+.lp-sticky-cta { display: none; }
+@media (min-width: 860px) { .lp-desk-nav { display: flex; } }
+@media (max-width: 640px) {
+  .lp-sticky-cta { display: block; }
+  body:has(.lp-giveaway) { padding-bottom: 76px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-giveaway [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .lp-giveaway *, .lp-giveaway *::before, .lp-giveaway *::after { animation: none !important; }
+}
+
+/* ---- CTA BUTTONS — Novecento DemiBold, ALL CAPS, 150 tracking ---- */
+.lp-giveaway .lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 32px;
+  font-family: var(--lp-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: var(--lp-track-caps);
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--lp-matte-black);
+  color: var(--lp-white);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--lp-dur-base) var(--lp-ease),
+              color var(--lp-dur-base) var(--lp-ease),
+              transform 120ms var(--lp-ease),
+              border-color var(--lp-dur-base) var(--lp-ease);
+}
+.lp-giveaway .lp-btn:hover { background: #000; color: var(--lp-white); }
+.lp-giveaway .lp-btn:active { transform: translateY(1px); }
+
+.lp-giveaway .lp-btn--primary {
+  background: var(--lp-gradient);
+  color: var(--lp-white);
+  border-color: transparent;
+}
+.lp-giveaway .lp-btn--primary:hover { filter: brightness(0.95); background: var(--lp-gradient); }
+
+.lp-giveaway .lp-btn--secondary {
+  background: transparent;
+  color: var(--lp-matte-black);
+  border-color: var(--lp-matte-black);
+}
+.lp-giveaway .lp-btn--secondary:hover { background: var(--lp-matte-black); color: var(--lp-white); }
+
+/* ---- EYEBROW ---- */
+.lp-giveaway .lp-eyebrow {
+  font-family: var(--lp-font-display);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--lp-track-caps);
+  color: var(--lp-accent);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.lp-giveaway .lp-eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  display: inline-block;
+}
