@@ -1,5 +1,5 @@
 {
-  "layout": false,
+  "layout": "giveaway",
   "sections": {
     "main": {
       "type": "lifepro-100k-giveaway",
